@@ -1,0 +1,39 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.68534,0.68226,0.67864,1.00000",
+      "display-p3:0.21179,0.21179,0.21357,1.00000"
+    ]
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "clickey.png",
+          "name" : "clickey",
+          "position" : {
+            "scale" : 1.03,
+            "translation-in-points" : [
+              0,
+              -2
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.6
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.2
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

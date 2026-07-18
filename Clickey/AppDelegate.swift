@@ -34,25 +34,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         let menu = NSMenu()
-        
-        // 1. Volume Slider
+        // this is the volume slider lol
         menu.addItem(createVolumeSliderItem())
         menu.addItem(NSMenuItem.separator())
         
-        // 2. Pause/Resume Toggle
+        // pause and resume toggle.
         let pauseTitle = AudioManager.shared.isPaused ? "Resume Sound" : "Pause Sound"
         let pauseItem = NSMenuItem(title: pauseTitle, action: #selector(togglePause(_:)), keyEquivalent: "p")
         menu.addItem(pauseItem)
         
-        // 3. Launch at Login Toggle
+        // lunch at login thing
         let loginItem = NSMenuItem(title: "Launch at Login", action: #selector(toggleLaunchAtLogin(_:)), keyEquivalent: "")
-        // Check system status to set the initial checkmark
         loginItem.state = SMAppService.mainApp.status == .enabled ? .on : .off
         menu.addItem(loginItem)
         
         menu.addItem(NSMenuItem.separator())
         
-        // 4. Quit
+        // quit app
         menu.addItem(NSMenuItem(title: "Quit Clickey", action: #selector(quitApp), keyEquivalent: "q"))
         
         statusItem?.menu = menu
@@ -107,7 +105,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 sender.state = .on
             }
         } catch {
-            print("❌ Failed to toggle launch at login: \(error.localizedDescription)")
+            print("failed: \(error.localizedDescription)")
         }
     }
 

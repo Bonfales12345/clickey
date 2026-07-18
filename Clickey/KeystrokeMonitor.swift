@@ -11,26 +11,24 @@ class KeystrokeMonitor {
     private init() {}
 
     func startMonitoring() {
-        // Step 1: Check baseline status without forcing a system prompt
+        // ask for prms
         if AXIsProcessTrusted() {
             setupEventTap()
         } else {
-            print("⚠️ Permissions missing. Triggering system prompt exactly once...")
+            print("missing prms, requesting")
             
-            // Step 2: Trigger prompt ONCE explicitly
+            // trigger accessbility prompt
             let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary
             _ = AXIsProcessTrustedWithOptions(options)
-            
-            // Step 3: Poll clean verification status in background
             pollForPermissions()
         }
     }
 
     private func pollForPermissions() {
         DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            // AXIsProcessTrusted checks status passively without spawning duplicated system alerts
+            // check prms
             if AXIsProcessTrusted() {
-                print("✅ Accessibility authorized.")
+                print("Accessibility authorized.")
                 DispatchQueue.main.async {
                     self?.setupEventTap()
                 }
@@ -55,14 +53,14 @@ class KeystrokeMonitor {
         )
 
         guard let eventTap = eventTap else {
-            print("❌ Event tap failure. Ensure App Sandbox is disabled and TCC DB is cleared.")
+            print("Error")
             return
         }
 
         runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0)
         CFRunLoopAddSource(CFRunLoopGetMain(), runLoopSource, .commonModes)
         CGEvent.tapEnable(tap: eventTap, enable: true)
-        print("⌨️ Global Keyboard Event Hook fully active.")
+        print("event active")
     }
 
     func stopMonitoring() {

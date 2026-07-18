@@ -38,7 +38,7 @@ class AudioManager {
 
     private func prepareAudio() {
         guard let url = Bundle.main.url(forResource: "creamy", withExtension: "wav") else {
-            print("❌ Error: creamy.wav not found.")
+            print("Error: creamy.wav not found.") // this is the keyboard switch sound btw
             return
         }
 
@@ -67,12 +67,12 @@ class AudioManager {
             engine.prepare()
             try engine.start()
         } catch {
-            print("❌ Audio engine failure: \(error.localizedDescription)")
+            print("engine failed: \(error.localizedDescription)")
         }
     }
 
     func play() {
-        // Intercept playback if the user paused the app
+        // turn off sound
         guard !isPaused, let buffer = buffer else { return }
 
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
