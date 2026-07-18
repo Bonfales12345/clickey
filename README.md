@@ -8,6 +8,8 @@ Clickey is a Open Source lightweight, background-native menu bar utility that tr
 
 </div>
 
+<video src="ClickeyDemo.mov" width="640" controls></video>
+
 ---
 
 ### Requirements
