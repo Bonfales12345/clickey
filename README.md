@@ -25,5 +25,3 @@ A lightweight, background-native menu bar utility that triggers audio on global 
 ### Development
 ```bash
 git clone https://github.com/Bonfales12345/clickey.git
-cd clickey
-xcodebuild -scheme Clickey -configuration Release build
