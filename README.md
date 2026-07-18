@@ -17,8 +17,9 @@ A lightweight, background-native menu bar utility that triggers audio on global 
 
 ### Installation
 1.  Download the latest release.
-2.  Move `Clickey.app` to your `/Applications` folder.
-3.  Launch the app and grant Accessibility permissions when prompted.
+2.  Extract the .zip File
+3.  Move `Clickey.app` to your `/Applications` folder.
+4.  Launch the app and grant Accessibility permissions when prompted.
 
 ---
 
