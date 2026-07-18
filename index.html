@@ -58,25 +58,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
             padding: 10px;
+            cursor: pointer;
+            user-select: none;
         }
 
         .keyboard-icon img {
             display: block;
-            width: 80px;
-            height: 80px;
+            width: 120px; /* Made the base icon size bigger */
+            height: 120px;
             object-fit: contain;
             filter: drop-shadow(0 12px 24px rgba(0,0,0,0.4));
-            transition: filter 0.4s ease;
+            transition: filter 0.2s ease;
         }
 
         .keyboard-icon:hover {
-            transform: scale(1.1) rotate(3deg);
+            transform: scale(1.05); /* Scales up smoothly on hover with no rotation */
         }
 
         .keyboard-icon:hover img {
             filter: drop-shadow(0 18px 32px rgba(0,0,0,0.6));
+        }
+
+        .keyboard-icon:active {
+            transform: scale(1.12); /* Grows just a little bit bigger while holding down */
         }
 
         @keyframes float {
