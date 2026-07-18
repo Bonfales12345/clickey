@@ -175,9 +175,98 @@
             line-height: 1.5;
         }
 
+        /* --- DEMO KEYBOARD STYLES --- */
+        .demo-section {
+            margin-top: 5rem;
+            padding-bottom: 3rem;
+            animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .demo-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+        
+        .demo-section p {
+            color: #a1a1aa;
+            margin-bottom: 2rem;
+        }
+
+        .mac-keyboard {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .keyboard-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .key {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #f5f5f7;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+            user-select: none;
+        }
+
+        .key:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .key:active, .key.pressed {
+            transform: translateY(2px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .key.spacebar {
+            width: 300px;
+        }
+
+        .key.modifier {
+            width: 70px;
+            font-size: 0.8rem;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding: 8px;
+            color: #a1a1aa;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 2.5rem; }
             .tagline { font-size: 1.1rem; }
+            .key { width: 35px; height: 35px; font-size: 0.9rem; }
+            .key.modifier { width: 50px; font-size: 0.7rem; }
+            .key.spacebar { width: 180px; }
+            .mac-keyboard { padding: 15px; border-radius: 12px; }
         }
     </style>
 </head>
@@ -186,7 +275,7 @@
     <div class="container">
         <div class="logo-wrapper">
             <div class="keyboard-icon">
-                <img src="clickey.png" alt="Clickey Logo">
+                <img src="clickey.png" alt="Clickey Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdib3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzMzMyIgcng9IjIwIi8+PC9zdmc+'">
             </div>
         </div>
 
@@ -214,7 +303,95 @@
                 <p>The app is free forever. Clone the repository, tweak the source, and build your ideal typing experience.</p>
             </div>
         </div>
-    </div>
 
+        <div class="demo-section">
+            <h2>Try the Demo</h2>
+            <p>Click the keys below or type on your physical keyboard.</p>
+            
+            <div class="mac-keyboard" id="demo-keyboard">
+                <div class="keyboard-row">
+                    <div class="key" data-key="q">Q</div>
+                    <div class="key" data-key="w">W</div>
+                    <div class="key" data-key="e">E</div>
+                    <div class="key" data-key="r">R</div>
+                    <div class="key" data-key="t">T</div>
+                    <div class="key" data-key="y">Y</div>
+                    <div class="key" data-key="u">U</div>
+                    <div class="key" data-key="i">I</div>
+                    <div class="key" data-key="o">O</div>
+                    <div class="key" data-key="p">P</div>
+                </div>
+                <div class="keyboard-row">
+                    <div class="key" data-key="a">A</div>
+                    <div class="key" data-key="s">S</div>
+                    <div class="key" data-key="d">D</div>
+                    <div class="key" data-key="f">F</div>
+                    <div class="key" data-key="g">G</div>
+                    <div class="key" data-key="h">H</div>
+                    <div class="key" data-key="j">J</div>
+                    <div class="key" data-key="k">K</div>
+                    <div class="key" data-key="l">L</div>
+                </div>
+                <div class="keyboard-row">
+                    <div class="key modifier" data-key="shift">Shift</div>
+                    <div class="key" data-key="z">Z</div>
+                    <div class="key" data-key="x">X</div>
+                    <div class="key" data-key="c">C</div>
+                    <div class="key" data-key="v">V</div>
+                    <div class="key" data-key="b">B</div>
+                    <div class="key" data-key="n">N</div>
+                    <div class="key" data-key="m">M</div>
+                    <div class="key modifier" data-key="enter">Enter</div>
+                </div>
+                <div class="keyboard-row">
+                    <div class="key modifier" data-key="meta">⌘ cmd</div>
+                    <div class="key spacebar" data-key=" "></div>
+                    <div class="key modifier" data-key="alt">⌥ opt</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const audioFile = 'sound.wav'; 
+
+        function playKeySound() {
+            const clickSound = new Audio(audioFile);
+            clickSound.volume = 0.5;
+            clickSound.play().catch(err => {
+                console.log("waiting for user");
+            });
+        }
+
+        const keys = document.querySelectorAll('.key');
+        keys.forEach(key => {
+            key.addEventListener('mousedown', () => {
+                playKeySound();
+                key.classList.add('pressed');
+            });
+            key.addEventListener('mouseup', () => key.classList.remove('pressed'));
+            key.addEventListener('mouseleave', () => key.classList.remove('pressed'));
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.repeat) return;
+            
+            playKeySound();
+            const keyName = e.key.toLowerCase();
+            const visualKey = document.querySelector(`.key[data-key="${keyName}"]`);
+            
+            if (visualKey) {
+                visualKey.classList.add('pressed');
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            const keyName = e.key.toLowerCase();
+            const visualKey = document.querySelector(`.key[data-key="${keyName}"]`);
+            
+            if (visualKey) {
+                visualKey.classList.remove('pressed');
+            }
+        });
+    </script>
 </body>
 </html>
