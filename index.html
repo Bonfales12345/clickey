@@ -6,6 +6,11 @@
     <title>Clickey</title>
     <link rel="icon" type="image/png" href="clickey.png">
     <style>
+        /* This rule targets the root element and fixes the white overscroll flash */
+        html {
+            background-color: #121214;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -66,7 +71,7 @@
 
         .keyboard-icon img {
             display: block;
-            width: 120px; /* Made the base icon size bigger */
+            width: 120px;
             height: 120px;
             object-fit: contain;
             filter: drop-shadow(0 12px 24px rgba(0,0,0,0.4));
