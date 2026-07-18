@@ -13,6 +13,7 @@ Clickey is a Open Source lightweight, background-native menu bar utility that tr
 Website:
   [Clickey](https://bonfales12345.github.io/clickey)
 <small>The page is vibe-coded.</small>
+
 ---
 
 ### Requirements
