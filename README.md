@@ -4,7 +4,7 @@
 
 # Clickey
 
-Clickey is a Open Source lightweight, background-native menu bar utility that triggers audio on global keystrokes.
+Clickey is a Open Source lightweight, background-native menu bar utility that triggers audio on global keystrokes. Only for macOS (Apple Silicon).
 
 </div>
 
@@ -16,6 +16,7 @@ Page: [bonfales12345.github.io/clickey](https://bonfales12345.github.io/clickey)
 ---
 
 ### Requirements
+*   **Device:** An Apple Silicon Mac (Intel Macs is **NOT** supported)
 *   **Permissions:** Must be granted **Accessibility** privileges in *System Settings > Privacy & Security > Accessibility*.
 
 ---
