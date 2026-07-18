@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Hides the application from the Dock, making it a pure menu bar app -->
+    <key>LSUIElement</key>
+    <true/>
+    
+    <!-- Optional: Explains why AppleEvents are needed if system prompts occur -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>Clickey requires access to monitor global keystrokes to trigger audio feedback.</string>
+</dict>
+</plist>
