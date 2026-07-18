@@ -16,7 +16,7 @@ Page: [bonfales12345.github.io/clickey](https://bonfales12345.github.io/clickey)
 ---
 
 ### Requirements
-*   **Device:** An Apple Silicon Mac (Intel Macs is **NOT** supported)
+*   **Device:** An Apple Silicon Mac (Intel Macs are **NOT** supported)
 *   **Permissions:** Must be granted **Accessibility** privileges in *System Settings > Privacy & Security > Accessibility*.
 
 ---
