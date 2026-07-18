@@ -55,27 +55,28 @@
         }
 
         .keyboard-icon {
-            background: linear-gradient(135deg, #3a3a45, #1e1e24);
-            border: 2px solid #4a4a55;
-            border-radius: 24px;
-            padding: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            padding: 10px;
         }
 
         .keyboard-icon img {
             display: block;
-            width: 64px;
-            height: 64px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.4));
+            transition: filter 0.4s ease;
         }
 
         .keyboard-icon:hover {
-            transform: scale(1.05) rotate(2deg);
-            box-shadow: 0 30px 50px rgba(0,0,0,0.7), 0 0 20px rgba(255,255,255,0.1);
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .keyboard-icon:hover img {
+            filter: drop-shadow(0 18px 32px rgba(0,0,0,0.6));
         }
 
         @keyframes float {
@@ -191,16 +192,16 @@
 
         <div class="features-grid">
             <div class="card">
-                <h3>Make your keyboard sounds</h3>
-                <p>Utilizes low-level Event Taps to capture system-wide global keystrokes seamlessly from the background.</p>
+                <h3>Satisfying Acoustics</h3>
+                <p>Triggers crisp mechanical switch sounds with every keypress using ultra-responsive, system-wide event listening.</p>
             </div>
             <div class="card">
-                <h3>Lightweight</h3>
-                <p>Designed for performance, it can run without using precious system CPU or RAM resources.</p>
+                <h3>Featherlight Performance</h3>
+                <p>Engineered down to the bone to run silently in the background with near-zero CPU and RAM utilization.</p>
             </div>
             <div class="card">
-                <h3>Open Source</h3>
-                <p>You can clone this, and add features you like to the app.</p>
+                <h3>Fully Open Source</h3>
+                <p>Transparent, secure, and free forever. Clone the repository, tweak the source, and build your ideal typing experience.</p>
             </div>
         </div>
     </div>
