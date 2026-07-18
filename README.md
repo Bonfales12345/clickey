@@ -11,7 +11,7 @@ Clickey is a Open Source lightweight, background-native menu bar utility that tr
 ![Clickey Demo](Demo.gif)
 
 Website:
-  [Cliicky](https://bonfales12345.github.io/clickey)
+  [Clicky](https://bonfales12345.github.io/clickey)
 ---
 
 ### Requirements
